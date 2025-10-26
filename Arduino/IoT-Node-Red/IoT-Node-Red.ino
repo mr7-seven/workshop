@@ -1,6 +1,7 @@
 #if defined(ESP8266)
 #include <ESP8266WiFi.h>
 #define LED_PIN D2       // GPIO4 pada NodeMCU
+
 #elif defined(ESP32)
 #include <WiFi.h>
 #define LED_PIN 2        // GPIO2 bawaan ESP32 (LED biru onboard)
@@ -27,7 +28,7 @@ PubSubClient client(espClient);
 // =================== Variabel Global ========================
 unsigned long lastReconnectAttempt = 0;
 unsigned long lastSend = 0;
-const unsigned long interval = 30000;  // setiap 30 detik
+const unsigned long interval = 5000;  // setiap 30 detik
 
 // ======================= WiFi Setup =========================
 void setup_wifi() {
